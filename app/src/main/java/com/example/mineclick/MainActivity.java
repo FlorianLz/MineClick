@@ -19,4 +19,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BoutiqueActivity.class);
         startActivity(intent);
     }
+
+    public void onClickJouer(View view) {
+        Intent intent = new Intent(this, JouerActivity.class);
+        startActivity(intent);
+    }
 }
