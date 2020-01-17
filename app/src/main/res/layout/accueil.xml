@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/mineclicktitre"
         android:text="@string/mineclick"
-        android:textColor="#000"
+        android:textColor="#fff"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
