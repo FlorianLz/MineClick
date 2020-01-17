@@ -33,6 +33,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/Émeraude"
         tools:ignore="MissingConstraints" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
