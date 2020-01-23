@@ -117,6 +117,7 @@
         app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toEndOf="@+id/imgEmerauld" />
 
+
     <TextView
         android:id="@+id/nbargent"
         android:layout_width="wrap_content"
