@@ -25,4 +25,7 @@
     <string name="saved_money">money</string>
     <string name="saved_clics">clic</string>
     <string name="saved_level">level</string>
+    <string name="reprendre_la_partie">Reprendre la partie</string>
+    <string name="_0">0</string>
+    <string name="saved_page" />
 </resources>

@@ -17,6 +17,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
     private int multiplicateur=1;
     private RefreshHandler handler;
     private int niveauActuel = 1;
+    private int page = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         handler = new RefreshHandler(this);
 
         Context context = JouerActivity.this;
-
-        SharedPreferences sharedPref = JouerActivity.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = JouerActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
         int defaultValue = getResources().getInteger(R.integer.default_money);
         cpt = sharedPref.getInt(getString(R.string.saved_clics), defaultValue);
         money = sharedPref.getInt(getString(R.string.saved_money), defaultValue);
@@ -35,11 +35,12 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
         ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
         update();
+        save();
 
     }
 
     public void reset(){
-        cpt=0;
+        cpt=1;
         multiplicateur=1;
         niveauActuel=0;
         money=0;
@@ -71,15 +72,18 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         int clics = cpt;
         int niveau =niveauActuel;
         int niveauMax = 5;
-        if(niveauActuel < niveauMax) {
-            while (clics > niveau * 5) {
-                clics -= 5 * niveau;
+        if(niveauActuel <= niveauMax) {
+            while (clics > niveau * 10) {
+                clics -= 10 * niveau;
                 ++niveau;
                 niveauActuel = niveau;
 
             }
             //int reste = (50 * niveau) - clics;
             //((TextView) findViewById(R.id.clickReste)).setText("Reste :" + reste);
+            if(niveau == 1){
+                ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.slime);
+            }
             if(niveau == 2){
                 ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.spider);
             }
@@ -89,11 +93,17 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             if(niveau == 4){
                 ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.creeper);
             }
-            if(niveau >= 5){
+            if(niveau == 5){
                 ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.enderdragon);
+
             }
         }else {
-            //((TextView) findViewById(R.id.textHaut)).setText("Vous venez de tuer l'enderdragon. Félicitations !");
+            ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.enderdragon);
+            reset();
+            save();
+            ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
+            ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+            //((TextView) findViewById(R.id.cpt)).setText("Vous venez de tuer l'enderdragon. Félicitations !");
         }
     }
 
@@ -105,11 +115,12 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
     }
 
     private void save(){
-        SharedPreferences sharedPref = JouerActivity.this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = JouerActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(getString(R.string.saved_money), money);
         editor.putInt(getString(R.string.saved_clics), cpt);
         editor.putInt(getString(R.string.saved_level), niveauActuel);
+        editor.putInt(getString(R.string.saved_page), page);
         editor.commit();
     }
 
