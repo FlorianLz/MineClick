@@ -65,9 +65,9 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/money2"
-        android:layout_width="21dp"
-        android:layout_height="28dp"
+        android:id="@+id/imgEmerauld"
+        android:layout_width="26dp"
+        android:layout_height="27dp"
         android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintStart_toEndOf="@+id/prix"
@@ -98,7 +98,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
         android:background="@mipmap/bouton"
-        android:text="retour"
+        android:text="@string/retour"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,12 +110,12 @@
         android:layout_height="30dp"
         android:layout_marginBottom="140dp"
         android:background="@mipmap/bouton"
-        android:text="acheter"
+        android:text="@string/acheter"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.135"
-        app:layout_constraintStart_toEndOf="@+id/money2" />
+        app:layout_constraintStart_toEndOf="@+id/imgEmerauld" />
 
     <TextView
         android:id="@+id/nbargent"
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="36dp"
-        android:text="1000"
+        android:text="@string/_1000"
         android:textColor="#fff"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/potion1"
