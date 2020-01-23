@@ -3,4 +3,6 @@
     <string name="mineclick">MineClick</string>
     <string name="acheter_des_am_liorations">Acheter des améliorations</string>
     <string name="_125">125</string>
+    <string name="co_t_30">coût : 30</string>
+    <string name="cette_potion_vous_permettra_d_activer_autoclick_pendant_30s">Cette potion vous permettra d\'activer autoclick pendant 30s</string>
 </resources>
