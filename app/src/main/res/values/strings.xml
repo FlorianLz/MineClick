@@ -10,4 +10,15 @@
     <string name="_1000">1000</string>
     <string name="ceci_n_est_pas_un_produit_officiel_mojang">CECI N\'EST PAS UN PRODUIT OFFICIEL MOJANG</string>
     <string name="on_ne_clique_jamais_assez">On ne clique jamais assez…</string>
+    <string name="menu">Menu</string>
+    <string name="enderchest">enderchest</string>
+    <string name="emeraude">emeraude</string>
+    <string name="pioche">pioche</string>
+    <string name="chest">chest</string>
+    <string name="slime">slime</string>
+    <string name="pnj">pnj</string>
+    <string name="potion3">potion3</string>
+    <string name="nuage">nuage</string>
+    <string name="potion1">potion1</string>
+    <string name="potion2">potion2</string>
 </resources>
