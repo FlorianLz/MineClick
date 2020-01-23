@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/fond"
+    tools:context=".MainActivity">
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/monstre"
+        android:layout_width="308dp"
+        android:layout_height="277dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/Slime" />
+
+    <ImageView
+        android:id="@+id/boutique"
+        android:layout_width="54dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/monstre"
+        app:layout_constraintStart_toEndOf="@+id/inventaire"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.253"
+        app:srcCompat="@mipmap/boutique" />
+
+    <ImageView
+        android:id="@+id/Mine"
+        android:layout_width="54dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/monstre"
+        app:layout_constraintStart_toEndOf="@+id/boutique"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.222"
+        app:srcCompat="@mipmap/mine" />
+
+    <ImageView
+        android:id="@+id/emerauld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/monstre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/emeraude" />
+
+    <TextView
+        android:id="@+id/nbargent"
+        android:layout_width="79dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="68dp"
+        android:text="@string/_1000"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/monstre"
+        app:layout_constraintEnd_toStartOf="@+id/emerauld"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Mine" />
+
+    <ImageView
+        android:id="@+id/inventaire"
+        android:layout_width="54dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/monstre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.253"
+        app:srcCompat="@mipmap/inventaire" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
