@@ -21,4 +21,8 @@
     <string name="nuage">nuage</string>
     <string name="potion1">potion1</string>
     <string name="potion2">potion2</string>
+    <string name="preference_file_key">preference_file_key</string>
+    <string name="saved_money">money</string>
+    <string name="saved_clics">clic</string>
+    <string name="saved_level">level</string>
 </resources>

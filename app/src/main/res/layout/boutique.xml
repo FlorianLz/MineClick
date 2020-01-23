@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/shop"
-    tools:context=".MainActivity">
+    tools:context=".BoutiqueActivity">
 
     <ImageView
         android:id="@+id/potion2"
@@ -56,11 +56,10 @@
 
     <ImageView
         android:id="@+id/money"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="66dp"
+        android:layout_height="62dp"
         android:layout_marginStart="100dp"
-        android:layout_marginEnd="230dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="200dp"
         android:contentDescription="@string/emeraude"
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,8 +70,8 @@
 
     <ImageView
         android:id="@+id/imgEmerauld"
-        android:layout_width="26dp"
-        android:layout_height="27dp"
+        android:layout_width="34dp"
+        android:layout_height="41dp"
         android:layout_marginBottom="140dp"
         android:contentDescription="@string/emeraude"
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
@@ -104,6 +103,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/mineclicktexte"
         android:background="@mipmap/bouton"
         android:onClick="onClickRetour"
         android:text="@string/retour"
@@ -112,26 +112,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potion3" />
 
+
     <Button
         android:id="@+id/acheter"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="140dp"
+        android:layout_width="103dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="144dp"
         android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
         android:text="@string/acheter"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgEmerauld" />
-
 
     <TextView
         android:id="@+id/nbargent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="36dp"
+        android:fontFamily="@font/mineclicktexte"
         android:text="@string/_1000"
         android:textColor="#fff"
         android:textSize="30sp"
@@ -147,6 +149,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginBottom="140dp"
         android:text="@string/co_t_30"
+        android:fontFamily="@font/mineclicktexte"
         android:textColor="#000"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
@@ -154,15 +157,17 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="182dp"
-        android:layout_height="65dp"
+        android:layout_width="220dp"
+        android:layout_height="89dp"
+        android:fontFamily="@font/mineclicktexte"
         android:gravity="center"
         android:text="@string/cette_potion_vous_permettra_d_activer_autoclick_pendant_30s"
         android:textColor="#000"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/prix"
         app:layout_constraintEnd_toEndOf="@+id/nuage"
         app:layout_constraintStart_toStartOf="@+id/nuage"
-        app:layout_constraintTop_toTopOf="@+id/nuage" />
+        app:layout_constraintTop_toTopOf="@+id/nuage"
+        app:layout_constraintVertical_bias="0.736" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
