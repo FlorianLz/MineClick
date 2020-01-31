@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,22 @@ public class InventaireActivity extends AppCompatActivity {
         nbpotion1 = sharedPref.getInt(getString(R.string.saved_potion1), defaultValue);
         nbpotion2 = sharedPref.getInt(getString(R.string.saved_potion2), defaultValue);
         nbpotion3 = sharedPref.getInt(getString(R.string.saved_potion3), defaultValue);
+
+        if(nbpotion1 == 0){
+            findViewById(R.id.potion1).setClickable(false);
+            ImageView img= (ImageView) findViewById(R.id.potion1);
+            img.setImageResource(R.mipmap.potion_force_nb);
+        }
+        if(nbpotion2 == 0){
+            findViewById(R.id.potion2).setClickable(false);
+            ImageView img= (ImageView) findViewById(R.id.potion2);
+            img.setImageResource(R.mipmap.potion_heal_nb);
+        }
+        if(nbpotion3 == 0){
+            findViewById(R.id.potion3).setClickable(false);
+            ImageView img= (ImageView) findViewById(R.id.potion3);
+            img.setImageResource(R.mipmap.potion_auto_nb);
+        }
     }
 
     public void onClickRetour(View view) {
@@ -64,4 +81,17 @@ public class InventaireActivity extends AppCompatActivity {
         findViewById(R.id.nbpotion).setVisibility(View.VISIBLE);
         ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion3);
     }
+
+    public void utiliserPotion1(View view) {
+        nbpotion1--;
+        SharedPreferences sharedPref = InventaireActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.saved_potion1), nbpotion1);
+        editor.putBoolean(getString(R.string.utiliserpotion1), true);
+        editor.commit();
+        Intent intent = new Intent(this, JouerActivity.class);
+        startActivity(intent);
+    }
+
+
 }
