@@ -29,4 +29,6 @@
     <string name="_0">0</string>
     <string name="saved_page">page</string>
     <string name="saved_potion1">potion1</string>
+    <string name="saved_potion2">potion2</string>
+    <string name="saved_potion3">potion3</string>
 </resources>
