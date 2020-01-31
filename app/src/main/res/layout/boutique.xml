@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toStartOf="@+id/nbpotion2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/potion1"
-        app:srcCompat="@mipmap/potion_red_1" />
+        app:srcCompat="@mipmap/potion_heal" />
 
     <ImageView
         android:id="@+id/potion1"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toStartOf="@+id/nbpotion1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nuage"
-        app:srcCompat="@mipmap/potion_red_1" />
+        app:srcCompat="@mipmap/potion_force" />
 
     <ImageView
         android:id="@+id/potion3"
@@ -80,8 +80,8 @@
 
     <ImageView
         android:id="@+id/pnj"
-        android:layout_width="208dp"
-        android:layout_height="394dp"
+        android:layout_width="203dp"
+        android:layout_height="376dp"
         android:layout_marginStart="164dp"
         android:contentDescription="@string/pnj"
         app:layout_constraintBottom_toBottomOf="parent"
