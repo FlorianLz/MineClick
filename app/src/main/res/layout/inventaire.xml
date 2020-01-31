@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/fond"
-    tools:context=".MainActivity">
+    tools:context=".InventaireActivity">
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="390dp"
         android:layout_height="253dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/nuaginvent" />
 
     <ImageView
@@ -36,7 +36,7 @@
         app:srcCompat="@mipmap/inventaire" />
 
     <Button
-        android:id="@+id/utiliser"
+        android:id="@+id/utiliser1"
         android:layout_width="126dp"
         android:layout_height="32dp"
         android:layout_marginStart="36dp"
@@ -49,12 +49,48 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/description3"
+        app:layout_constraintStart_toEndOf="@+id/nbpotion"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintVertical_bias="0.362" />
+
+    <Button
+        android:id="@+id/utiliser2"
+        android:layout_width="126dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
+        android:text="utiliser"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nbpotion"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintVertical_bias="0.362" />
+
+    <Button
+        android:id="@+id/utiliser3"
+        android:layout_width="126dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="36dp"
+        android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
+        android:text="utiliser"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/nbpotion"
+        app:layout_constraintTop_toBottomOf="@+id/description"
         app:layout_constraintVertical_bias="0.362" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/nbpotion"
         android:layout_width="52dp"
         android:layout_height="59dp"
         android:layout_marginStart="100dp"
@@ -62,14 +98,16 @@
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/mineclicktexte"
         android:text="x0"
-        android:textColor="#fff"
-        android:textSize="14sp"
+        android:visibility="invisible"
+        android:textColor="#000"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView9"
         app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/description3" />
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/description3"
+        android:id="@+id/description"
         android:layout_width="228dp"
         android:layout_height="59dp"
         android:layout_marginTop="60dp"
@@ -95,15 +133,40 @@
         app:srcCompat="@mipmap/inventaire" />
 
     <ImageView
-        android:id="@+id/potion"
+        android:id="@+id/potion1"
         android:layout_width="56dp"
         android:layout_height="56dp"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="80dp"
+        android:onClick="onClickPotion1"
         android:contentDescription="@string/potion1"
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:srcCompat="@mipmap/potion_red_1" />
+        app:srcCompat="@mipmap/potion_force" />
+
+    <ImageView
+        android:id="@+id/potion2"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="80dp"
+        android:onClick="onClickPotion2"
+        android:contentDescription="@string/potion1"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:srcCompat="@mipmap/potion_heal" />
+
+    <ImageView
+        android:id="@+id/potion3"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="80dp"
+        android:onClick="onClickPotion3"
+        android:contentDescription="@string/potion1"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:srcCompat="@mipmap/potion_auto" />
 
     <Button
         android:id="@+id/retour2"

@@ -112,6 +112,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:contentDescription="@string/enderchest"
+        android:onClick="onClickInventaire"
         app:layout_constraintBottom_toTopOf="@+id/monstre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

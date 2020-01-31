@@ -58,6 +58,11 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         startActivity(intent);
     }
 
+    public void onClickInventaire(View view) {
+        Intent intent = new Intent(this, InventaireActivity.class);
+        startActivity(intent);
+    }
+
     public void onClickMob(View view) {
         cpt+= multiplicateur;
         update();
