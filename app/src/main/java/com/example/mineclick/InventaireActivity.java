@@ -62,10 +62,17 @@ public class InventaireActivity extends AppCompatActivity {
 
 
     public void onClickPotion1(View view) {
-        ((TextView) findViewById(R.id.description)).setText("Cette potion te permets de cliquer 4 fois plus vite durant 1 minute !");
-        findViewById(R.id.utiliser1).setVisibility(View.VISIBLE);
-        findViewById(R.id.nbpotion).setVisibility(View.VISIBLE);
-        ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion1);
+        if (nbpotion1 > 0){
+            ((TextView) findViewById(R.id.description)).setText("Cette potion te permets de cliquer 4 fois plus vite durant 1 minute !");
+            findViewById(R.id.utiliser1).setVisibility(View.VISIBLE);
+            findViewById(R.id.nbpotion).setVisibility(View.VISIBLE);
+            ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion1);
+        }else{
+            findViewById(R.id.potion1).setClickable(false);
+            ImageView img= (ImageView) findViewById(R.id.potion1);
+            img.setImageResource(R.mipmap.potion_force_nb);
+        }
+
     }
 
     public void onClickPotion2(View view) {
@@ -79,18 +86,27 @@ public class InventaireActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.description)).setText("Cette potion te permet d'utiliser l'autoclick pendant 30 secondes");
         findViewById(R.id.utiliser3).setVisibility(View.VISIBLE);
         findViewById(R.id.nbpotion).setVisibility(View.VISIBLE);
-        ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion3);
+        ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion3);findViewById(R.id.potion1).setClickable(false);
+        ImageView img= (ImageView) findViewById(R.id.potion1);
+        img.setImageResource(R.mipmap.potion_force_nb);
     }
 
     public void utiliserPotion1(View view) {
-        nbpotion1--;
+        if (nbpotion1 > 0){
+            nbpotion1--;
+            save();
+            Intent intent = new Intent(this, JouerActivity.class);
+            startActivity(intent);
+        }
+
+    }
+
+    public void save(){
         SharedPreferences sharedPref = InventaireActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(getString(R.string.saved_potion1), nbpotion1);
         editor.putBoolean(getString(R.string.utiliserpotion1), true);
         editor.commit();
-        Intent intent = new Intent(this, JouerActivity.class);
-        startActivity(intent);
     }
 
 

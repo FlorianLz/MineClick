@@ -58,4 +58,9 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt(getString(R.string.saved_page), page);
         editor.commit();
     }
+
+    public void pageCredits(View view) {
+        Intent intent = new Intent(this, CreditsActivity.class);
+        startActivity(intent);
+    }
 }
