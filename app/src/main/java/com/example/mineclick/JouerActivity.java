@@ -18,6 +18,9 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
     private RefreshHandler handler;
     private int niveauActuel = 1;
     private int page = 2;
+    private boolean utiliserpotion1=false;
+    private int tempspotion1 = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,28 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         cpt = sharedPref.getInt(getString(R.string.saved_clics), defaultValue);
         money = sharedPref.getInt(getString(R.string.saved_money), defaultValue);
         niveauActuel = sharedPref.getInt(getString(R.string.saved_level), defaultValue);
+        utiliserpotion1 = sharedPref.getBoolean(getString(R.string.utiliserpotion1), false);
+        tempspotion1 = sharedPref.getInt(getString(R.string.saved_tempspotion1), defaultValue);
         ((TextView) findViewById(R.id.nbargent)).setText("" +money);
         ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
         ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
         update();
         save();
+
+        if(utiliserpotion1==true){
+            //handler = new RefreshHandler(this);
+            if(tempspotion1 == 0){
+                tempspotion1 = 20;
+                multiplicateur=4;
+                findViewById(R.id.force).setVisibility(View.VISIBLE);
+                findViewById(R.id.tempspotion1).setVisibility(View.VISIBLE);
+                updateTimer();
+                save();
+            }else{
+                updateTimer();
+                save();
+            }
+        }
 
     }
 
@@ -55,6 +75,11 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
 
     public void onClickRetour(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickInventaire(View view) {
+        Intent intent = new Intent(this, InventaireActivity.class);
         startActivity(intent);
     }
 
@@ -121,44 +146,27 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         editor.putInt(getString(R.string.saved_clics), cpt);
         editor.putInt(getString(R.string.saved_level), niveauActuel);
         editor.putInt(getString(R.string.saved_page), page);
+        editor.putInt(getString(R.string.saved_tempspotion1), tempspotion1);
+        editor.putBoolean(getString(R.string.utiliserpotion1), utiliserpotion1);
         editor.commit();
     }
 
-     /* public void onClickReset(View view) {
-        cpt=0;
-        multiplicateur=1;
-        niveauActuel=0;
-        update();
-        ((ImageView) findViewById(R.id.ImageA)).setImageResource(R.mipmap.niveaua);
-    }*/
-
-    /* public void onClickPlus(View view) {
-        plusUtilisé = true;
-        cpt += 50;
-        update();
-        findViewById(R.id.imagePlus).setVisibility(View.INVISIBLE);
-    }*/
-
-
-    /*public void onClickMultiplie(View view) {
-        foisUtilisé = true;
-        if(niveauActuel>=5) {
-            multiplicateur = 2;
-            findViewById(R.id.imageFois).setVisibility(View.INVISIBLE);
-        }
-    }*/
-
-    /*public void onClickAuto(View view) {
-        aleaUtilisé = true;
-        niveauMaxAuto = niveauActuel +1;
-        updateTimer();
-    }*/
-
     @Override
     public void updateTimer() {
-        ++cpt;
-        update();
-        /*if (niveauActuel<niveauMaxAuto) handler.scheduleRefresh(100);
-        findViewById(R.id.imageAuto).setVisibility(View.INVISIBLE);*/
+        multiplicateur=4;
+        findViewById(R.id.force).setVisibility(View.VISIBLE);
+        findViewById(R.id.tempspotion1).setVisibility(View.VISIBLE);
+        --tempspotion1;
+        ((TextView) findViewById(R.id.tempspotion1)).setText("" + tempspotion1);
+        save();
+        if (tempspotion1 > 0){
+            handler.scheduleRefresh(1000);
+        }else{
+            multiplicateur=1;
+            findViewById(R.id.force).setVisibility(View.INVISIBLE);
+            findViewById(R.id.tempspotion1).setVisibility(View.INVISIBLE);
+            utiliserpotion1=false;
+            save();
+        }
     }
 }

@@ -47,10 +47,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClickInventaire(View view) {
+        Intent intent = new Intent(this, InventaireActivity.class);
+        startActivity(intent);
+    }
+
     private void save(){
         SharedPreferences sharedPref = MainActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(getString(R.string.saved_page), page);
         editor.commit();
+    }
+
+    public void pageCredits(View view) {
+        Intent intent = new Intent(this, CreditsActivity.class);
+        startActivity(intent);
     }
 }
