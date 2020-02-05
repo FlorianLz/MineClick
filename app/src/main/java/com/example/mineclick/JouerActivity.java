@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class JouerActivity extends AppCompatActivity implements TimerAction {
 
     private int cpt = 0;
@@ -19,7 +21,9 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
     private int niveauActuel = 1;
     private int page = 2;
     private boolean utiliserpotion1=false;
+    private boolean utiliserpotion2=false;
     private int tempspotion1 = 0;
+    private int tempsaffichage = 0;
 
 
     @Override
@@ -35,6 +39,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         money = sharedPref.getInt(getString(R.string.saved_money), defaultValue);
         niveauActuel = sharedPref.getInt(getString(R.string.saved_level), defaultValue);
         utiliserpotion1 = sharedPref.getBoolean(getString(R.string.utiliserpotion1), false);
+        utiliserpotion2 = sharedPref.getBoolean(getString(R.string.utiliserpotion2), false);
         tempspotion1 = sharedPref.getInt(getString(R.string.saved_tempspotion1), defaultValue);
         ((TextView) findViewById(R.id.nbargent)).setText("" +money);
         ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
@@ -43,7 +48,6 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         save();
 
         if(utiliserpotion1==true){
-            //handler = new RefreshHandler(this);
             if(tempspotion1 == 0){
                 tempspotion1 = 20;
                 multiplicateur=4;
@@ -55,6 +59,24 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
                 updateTimer();
                 save();
             }
+        }
+
+        if(utiliserpotion2==true){
+            Random r = new Random();
+            int nbrandom = r.nextInt(601 - 300) + 300;
+            ((TextView) findViewById(R.id.nbdegats)).setText("" + nbrandom);
+            findViewById(R.id.degatseffectues).setVisibility(View.VISIBLE);
+            findViewById(R.id.nbdegats).setVisibility(View.VISIBLE);
+            cpt += nbrandom;
+            utiliserpotion2=false;
+            save();
+            update();
+            money();
+            ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
+            ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+            tempsaffichage=5;
+            afficherDegats();
+
         }
 
     }
@@ -98,8 +120,8 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         int niveau =niveauActuel;
         int niveauMax = 5;
         if(niveauActuel <= niveauMax) {
-            while (clics > niveau * 10) {
-                clics -= 10 * niveau;
+            while (clics > niveau * 5000) {
+                clics -= 5000 * niveau;
                 ++niveau;
                 niveauActuel = niveau;
 
@@ -148,10 +170,10 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         editor.putInt(getString(R.string.saved_page), page);
         editor.putInt(getString(R.string.saved_tempspotion1), tempspotion1);
         editor.putBoolean(getString(R.string.utiliserpotion1), utiliserpotion1);
+        editor.putBoolean(getString(R.string.utiliserpotion2), utiliserpotion2);
         editor.commit();
     }
 
-    @Override
     public void updateTimer() {
         multiplicateur=4;
         findViewById(R.id.force).setVisibility(View.VISIBLE);
@@ -166,6 +188,19 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             findViewById(R.id.force).setVisibility(View.INVISIBLE);
             findViewById(R.id.tempspotion1).setVisibility(View.INVISIBLE);
             utiliserpotion1=false;
+            save();
+        }
+    }
+
+    public void afficherDegats(){
+        tempsaffichage--;
+        if (tempsaffichage > 0){
+            handler.scheduleRefresh(1000);
+        }else{
+            tempsaffichage=0;
+            findViewById(R.id.nbdegats).setVisibility(View.INVISIBLE);
+            findViewById(R.id.degatseffectues).setVisibility(View.INVISIBLE);
+            utiliserpotion2=false;
             save();
         }
     }

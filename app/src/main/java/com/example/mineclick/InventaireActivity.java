@@ -76,10 +76,16 @@ public class InventaireActivity extends AppCompatActivity {
     }
 
     public void onClickPotion2(View view) {
-        ((TextView) findViewById(R.id.description)).setText("Cette potion te permet d'infliger entre 300 et 600 clics d'un coup !");
-        findViewById(R.id.utiliser2).setVisibility(View.VISIBLE);
-        findViewById(R.id.nbpotion).setVisibility(View.VISIBLE);
-        ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion2);
+        if (nbpotion2 > 0){
+            ((TextView) findViewById(R.id.description)).setText("Cette potion te permet d'infliger entre 300 et 600 clics d'un coup !");
+            findViewById(R.id.utiliser2).setVisibility(View.VISIBLE);
+            findViewById(R.id.nbpotion).setVisibility(View.VISIBLE);
+            ((TextView) findViewById(R.id.nbpotion)).setText("x" + nbpotion2);
+        }else{
+            findViewById(R.id.potion2).setClickable(false);
+            ImageView img= (ImageView) findViewById(R.id.potion2);
+            img.setImageResource(R.mipmap.potion_heal_nb);
+        }
     }
 
     public void onClickPotion3(View view) {
@@ -101,11 +107,29 @@ public class InventaireActivity extends AppCompatActivity {
 
     }
 
+    public void utiliserPotion2(View view) {
+        if (nbpotion2 > 0){
+            nbpotion2--;
+            save2();
+            Intent intent = new Intent(this, JouerActivity.class);
+            startActivity(intent);
+        }
+
+    }
+
     public void save(){
         SharedPreferences sharedPref = InventaireActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(getString(R.string.saved_potion1), nbpotion1);
         editor.putBoolean(getString(R.string.utiliserpotion1), true);
+        editor.commit();
+    }
+
+    public void save2(){
+        SharedPreferences sharedPref = InventaireActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.saved_potion2), nbpotion2);
+        editor.putBoolean(getString(R.string.utiliserpotion2), true);
         editor.commit();
     }
 
