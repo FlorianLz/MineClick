@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -47,8 +48,10 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         update();
         save();
 
-        if(utiliserpotion1==true){
-            if(tempspotion1 == 0){
+
+        Log.d("potion", "potion1"+utiliserpotion1+" "+tempspotion1);
+        if(utiliserpotion1){
+            if(tempspotion1 <= 0){
                 tempspotion1 = 20;
                 multiplicateur=4;
                 findViewById(R.id.force).setVisibility(View.VISIBLE);
@@ -61,9 +64,9 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             }
         }
 
-        if(utiliserpotion2==true){
+        if(utiliserpotion2){
             Random r = new Random();
-            int nbrandom = r.nextInt(601 - 300) + 300;
+            int nbrandom = r.nextInt(600 - 300) + 300;
             ((TextView) findViewById(R.id.nbdegats)).setText("" + nbrandom);
             findViewById(R.id.degatseffectues).setVisibility(View.VISIBLE);
             findViewById(R.id.nbdegats).setVisibility(View.VISIBLE);
@@ -93,6 +96,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
     public void onClickBoutique(View view) {
         Intent intent = new Intent(this, BoutiqueActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     public void onClickRetour(View view) {
@@ -178,7 +182,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         multiplicateur=4;
         findViewById(R.id.force).setVisibility(View.VISIBLE);
         findViewById(R.id.tempspotion1).setVisibility(View.VISIBLE);
-        --tempspotion1;
+        tempspotion1--;
         ((TextView) findViewById(R.id.tempspotion1)).setText("" + tempspotion1);
         save();
         if (tempspotion1 > 0){
@@ -204,4 +208,5 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             save();
         }
     }
+
 }

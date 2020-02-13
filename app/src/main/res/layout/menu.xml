@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/fondmenu"
+    tools:context=".JouerActivity">
+
+    <Button
+        android:id="@+id/retour"
+        android:layout_width="79dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="250dp"
+        android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
+        android:onClick="onClickRetour"
+        android:text="@string/retour"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mine" />
+
+    <Button
+        android:id="@+id/inventaire"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="130dp"
+        android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
+        android:onClick="onClickRetour"
+        android:text="Inventaire"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/boutique"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
+        android:onClick="onClickRetour"
+        android:text="Boutique"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inventaire" />
+
+    <Button
+        android:id="@+id/mine"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/bouton"
+        android:fontFamily="@font/mineclicktexte"
+        android:onClick="onClickRetour"
+        android:text="Mine"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boutique" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
