@@ -103,6 +103,7 @@ public class InventaireActivity extends AppCompatActivity {
             save();
             Intent intent = new Intent(this, JouerActivity.class);
             startActivity(intent);
+            this.finish();
         }
 
     }
@@ -113,6 +114,7 @@ public class InventaireActivity extends AppCompatActivity {
             save2();
             Intent intent = new Intent(this, JouerActivity.class);
             startActivity(intent);
+            this.finish();
         }
 
     }

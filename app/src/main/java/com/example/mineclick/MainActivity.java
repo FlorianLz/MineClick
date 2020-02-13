@@ -40,16 +40,19 @@ public class MainActivity extends AppCompatActivity {
     public void onClickBoutique(View view) {
         Intent intent = new Intent(this, BoutiqueActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     public void onClickJouer(View view) {
         Intent intent = new Intent(this, JouerActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     public void onClickInventaire(View view) {
         Intent intent = new Intent(this, InventaireActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     private void save(){
@@ -62,5 +65,6 @@ public class MainActivity extends AppCompatActivity {
     public void pageCredits(View view) {
         Intent intent = new Intent(this, CreditsActivity.class);
         startActivity(intent);
+        this.finish();
     }
 }

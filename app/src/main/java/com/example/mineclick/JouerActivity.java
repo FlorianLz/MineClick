@@ -49,7 +49,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         save();
 
 
-        Log.d("potion", "potion1"+utiliserpotion1+" "+tempspotion1);
+        //Log.d("potion", "potion1"+utiliserpotion1+" "+tempspotion1);
         if(utiliserpotion1){
             if(tempspotion1 <= 0){
                 tempspotion1 = 20;
@@ -102,11 +102,13 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
     public void onClickRetour(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     public void onClickInventaire(View view) {
         Intent intent = new Intent(this, InventaireActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     public void onClickMob(View view) {
@@ -115,7 +117,6 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         money();
         ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
         ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
-
         save();
     }
 

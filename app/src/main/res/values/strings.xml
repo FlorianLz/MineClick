@@ -34,4 +34,7 @@
     <string name="saved_tempspotion1">saved_tempspotion1</string>
     <string name="utiliserpotion1">utiliserpotion1</string>
     <string name="utiliserpotion2">utiliserpotion2</string>
+    <string name="boutique">Boutique</string>
+    <string name="inventaire">Inventaire</string>
+    <string name="mine">Mine</string>
 </resources>
