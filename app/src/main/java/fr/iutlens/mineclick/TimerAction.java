@@ -1,4 +1,4 @@
-package com.example.mineclick;
+package fr.iutlens.mineclick;
 
 interface TimerAction {
     void updateTimer();

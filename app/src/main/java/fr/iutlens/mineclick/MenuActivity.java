@@ -1,4 +1,4 @@
-package com.example.mineclick;
+package fr.iutlens.mineclick;
 
 import android.app.Activity;
 import android.content.Intent;
