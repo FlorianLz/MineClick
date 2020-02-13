@@ -40,7 +40,7 @@
 
     <TextView
         android:id="@+id/backgroundI"
-        android:layout_width="235dp"
+        android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/mineclicktitre"
@@ -59,14 +59,14 @@
         android:fontFamily="@font/mineclicktexte"
         android:text="www.fondsecran.eu/"
         android:textColor="#fff"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backgroundI" />
 
     <TextView
         android:id="@+id/illustration"
-        android:layout_width="225dp"
+        android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/mineclicktitre"
@@ -85,7 +85,7 @@
         android:fontFamily="@font/mineclicktexte"
         android:text="www.minecraft-fr.gamepedia.com/"
         android:textColor="#fff"
-        android:textSize="17sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/illustration" />
@@ -98,14 +98,14 @@
         android:fontFamily="@font/mineclicktexte"
         android:text="www.minecraft.novaskin.me/"
         android:textColor="#fff"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/illustr1" />
 
     <TextView
         android:id="@+id/fonts"
-        android:layout_width="66dp"
+        android:layout_width="wrap_content"
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/mineclicktitre"
@@ -124,7 +124,7 @@
         android:fontFamily="@font/mineclicktexte"
         android:text="Minecraftia_2.0.font"
         android:textColor="#fff"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fonts" />
@@ -137,7 +137,7 @@
         android:fontFamily="@font/mineclicktexte"
         android:text="Minecrafter.font"
         android:textColor="#fff"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/font1" />
