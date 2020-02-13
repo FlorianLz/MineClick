@@ -29,4 +29,9 @@ public class MenuActivity extends Activity {
         startActivity(intent);
         this.finish();
     }
+    public void onClickMenu(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        this.finish();
+    }
 }
