@@ -105,11 +105,12 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         this.finish();
     }
 
-    public void onClickInventaire(View view) {
-        Intent intent = new Intent(this, InventaireActivity.class);
+    public void onClickMenu(View view) {
+        Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
         this.finish();
     }
+
 
     public void onClickMob(View view) {
         cpt+= multiplicateur;
@@ -151,8 +152,8 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             }
         }else {
             ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.enderdragon);
-            reset();
-            save();
+            //reset();
+            //save();
             ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
             ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
             //((TextView) findViewById(R.id.cpt)).setText("Vous venez de tuer l'enderdragon. Félicitations !");
