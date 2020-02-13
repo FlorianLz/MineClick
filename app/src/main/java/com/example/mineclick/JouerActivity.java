@@ -161,7 +161,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
 
     private void money(){
         if (cpt%5 == 0){
-            money=money+10;
+            money=money+1;
             ((TextView) findViewById(R.id.nbargent)).setText("" +money);
         }
     }
