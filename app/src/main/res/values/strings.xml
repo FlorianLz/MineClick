@@ -39,14 +39,10 @@
     <string name="mine">Mine</string>
     <string name="cpt">cpt</string>
     <string name="level">level</string>
-    <string name="textview">TextView</string>
     <string name="image">image</string>
     <string name="textview">TextView</string>
     <string name="utiliser">utiliser</string>
-    <string name="utiliser">utiliser</string>
-    <string name="utiliser">utiliser</string>
-    <string name="x0">x0</string>
-    <string name="bienvenue_dans_votre_inventaire">Bienvenue dans votre inventaire...</string>
+    <string name="bienvenue_dans_votre_inventaire">Bienvenue dans votre inventaire…</string>
     <string name="retourr">Retour</string>
     <string name="background_images">Background Images</string>
     <string name="www_fondsecran_eu">www.fondsecran.eu/</string>
@@ -57,8 +53,6 @@
     <string name="fonts">Fonts</string>
     <string name="minecrafter_font">Minecrafter.font</string>
     <string name="bienvenue_dans_ma_boutique_quelle_potion_te_ferait_plaisir">Bienvenue dans ma boutique ! Quelle potion te ferait plaisir ?</string>
-    <string name="x0">x0</string>
-    <string name="x0">x0</string>
     <string name="x0">x0</string>
     <string name="pig">pig</string>
     <string name="bedrock">bedrock</string>
