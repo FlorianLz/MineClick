@@ -81,7 +81,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="204dp"
         android:fontFamily="@font/mineclicktexte"
-        android:text="level"
+        android:text="@string/level"
         android:textColor="#fff"
         android:textSize="30sp"
         android:visibility="invisible"
@@ -95,7 +95,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="200dp"
         android:fontFamily="@font/mineclicktexte"
-        android:text="cpt"
+        android:text="@string/cpt"
         android:textColor="#fff"
         android:textSize="30sp"
         android:visibility="invisible"
@@ -140,7 +140,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/retour"
         app:layout_constraintTop_toBottomOf="@+id/monstre"
-        app:srcCompat="@mipmap/skindos" />
+        app:srcCompat="@mipmap/skindos"
+        android:contentDescription="@string/image" />
 
     <ImageView
         android:id="@+id/autoclic"
@@ -154,7 +155,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:srcCompat="@mipmap/effects_autoclique"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:contentDescription="@string/image" />
 
     <ImageView
         android:id="@+id/force"
@@ -168,7 +170,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:srcCompat="@mipmap/effects_force"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:contentDescription="@string/image" />
 
     <ImageView
         android:id="@+id/degatseffectues"
@@ -182,13 +185,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:srcCompat="@mipmap/effects_heal"
-        tools:visibility="invisible" />
+        tools:visibility="invisible"
+        android:contentDescription="@string/image" />
 
     <TextView
         android:id="@+id/tempspotion1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textColor="#fff"
         android:textSize="15sp"
         android:visibility="invisible"
@@ -203,7 +207,7 @@
         android:id="@+id/nbdegats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textColor="#fff"
         android:textSize="15sp"
         android:visibility="invisible"

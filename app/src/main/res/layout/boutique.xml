@@ -123,7 +123,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toEndOf="@+id/imgEmerauld" />
+        app:layout_constraintStart_toEndOf="@+id/imgEmerauld"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/acheterpotion2"
@@ -140,7 +141,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toEndOf="@+id/imgEmerauld" />
+        app:layout_constraintStart_toEndOf="@+id/imgEmerauld"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/acheterpotion3"
@@ -157,7 +159,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/nuage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.177"
-        app:layout_constraintStart_toEndOf="@+id/imgEmerauld" />
+        app:layout_constraintStart_toEndOf="@+id/imgEmerauld"
+        tools:ignore="SmallSp" />
 
     <ImageView
         android:id="@+id/imgEmerauld"
@@ -208,7 +211,7 @@
         android:layout_height="59dp"
         android:fontFamily="@font/mineclicktexte"
         android:gravity="center"
-        android:text="Bienvenue dans ma boutique ! Quelle potion te ferait plaisir ?"
+        android:text="@string/bienvenue_dans_ma_boutique_quelle_potion_te_ferait_plaisir"
         android:textColor="#000"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/prix"
@@ -225,7 +228,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="52dp"
         android:fontFamily="@font/mineclicktexte"
-        android:text="x0"
+        android:text="@string/x0"
         android:textColor="#fff"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/pnj"
@@ -238,7 +241,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="52dp"
         android:fontFamily="@font/mineclicktexte"
-        android:text="x0"
+        android:text="@string/x0"
         android:textColor="#fff"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/pnj"
@@ -251,7 +254,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="52dp"
         android:fontFamily="@font/mineclicktexte"
-        android:text="x0"
+        android:text="@string/x0"
         android:textColor="#fff"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/pnj"

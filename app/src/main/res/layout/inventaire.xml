@@ -21,7 +21,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.608"
-        app:srcCompat="@mipmap/nuaginvent" />
+        app:srcCompat="@mipmap/nuaginvent"
+        android:contentDescription="@string/nuage" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -33,7 +34,8 @@
         app:layout_constraintBottom_toTopOf="@+id/retour2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/inventaire" />
+        app:srcCompat="@mipmap/inventaire"
+        android:contentDescription="@string/inventaire" />
 
     <Button
         android:id="@+id/utiliser1"
@@ -42,7 +44,7 @@
         android:layout_marginStart="36dp"
         android:background="@mipmap/bouton"
         android:fontFamily="@font/mineclicktexte"
-        android:text="utiliser"
+        android:text="@string/utiliser"
         android:textColor="#fff"
         android:textSize="10sp"
         android:visibility="invisible"
@@ -52,7 +54,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nbpotion"
         app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/utiliser2"
@@ -61,7 +64,7 @@
         android:layout_marginStart="36dp"
         android:background="@mipmap/bouton"
         android:fontFamily="@font/mineclicktexte"
-        android:text="utiliser"
+        android:text="@string/utiliser"
         android:textColor="#fff"
         android:textSize="10sp"
         android:onClick="utiliserPotion2"
@@ -71,7 +74,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nbpotion"
         app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="SmallSp" />
 
     <Button
         android:id="@+id/utiliser3"
@@ -80,7 +84,7 @@
         android:layout_marginStart="36dp"
         android:background="@mipmap/bouton"
         android:fontFamily="@font/mineclicktexte"
-        android:text="utiliser"
+        android:text="@string/utiliser"
         android:textColor="#fff"
         android:textSize="10sp"
         android:visibility="invisible"
@@ -89,7 +93,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nbpotion"
         app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.25"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/nbpotion"
@@ -99,7 +104,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginBottom="70dp"
         android:fontFamily="@font/mineclicktexte"
-        android:text="x0"
+        android:text="@string/x0"
         android:textColor="#000"
         android:textSize="25sp"
         android:visibility="invisible"
@@ -115,7 +120,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/mineclicktexte"
         android:gravity="center"
-        android:text="Bienvenue dans votre inventaire..."
+        android:text="@string/bienvenue_dans_votre_inventaire"
         android:textColor="#000"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
@@ -133,7 +138,8 @@
         app:layout_constraintBottom_toTopOf="@+id/retour2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/inventaire" />
+        app:srcCompat="@mipmap/inventaire"
+        android:contentDescription="@string/inventaire" />
 
     <ImageView
         android:id="@+id/potion1"

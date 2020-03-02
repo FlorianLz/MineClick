@@ -37,7 +37,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="SmallSp" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -48,7 +49,8 @@
         app:layout_constraintStart_toEndOf="@+id/money"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.038"
-        app:srcCompat="@mipmap/emeraude" />
+        app:srcCompat="@mipmap/emeraude"
+        android:contentDescription="@string/emeraude" />
 
     <TextView
         android:id="@+id/money"
@@ -72,7 +74,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/bedrock" />
+        app:srcCompat="@mipmap/bedrock"
+        android:contentDescription="@string/bedrock" />
 
     <Button
         android:id="@+id/suivant"
@@ -91,7 +94,8 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:ignore="SmallSp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -123,22 +127,24 @@
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@mipmap/skin" />
+        app:srcCompat="@mipmap/skin"
+        android:contentDescription="@string/www_minecraft_novaskin_me" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="140dp"
         android:layout_marginEnd="104dp"
-        android:layout_marginBottom="60dp"
         android:onClick="onClickInventaire"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintBottom_toTopOf="@+id/suivant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@mipmap/enderchest" />
+        app:layout_constraintVertical_bias="0.068"
+        app:srcCompat="@mipmap/enderchest"
+        android:contentDescription="@string/enderchest" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -147,10 +153,12 @@
         android:layout_marginStart="62dp"
         android:layout_marginEnd="104dp"
         android:layout_marginBottom="55dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/suivant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:srcCompat="@mipmap/cochon" />
+        app:srcCompat="@mipmap/cochon"
+        android:contentDescription="@string/pig" />
 
     <TextView
         android:id="@+id/textView5"
@@ -166,7 +174,8 @@
         app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.692"
+        tools:ignore="SmallSp" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -180,6 +189,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@mipmap/credits" />
+        app:srcCompat="@mipmap/credits"
+        android:contentDescription="@string/commandblock" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
