@@ -78,8 +78,8 @@
         android:id="@+id/level"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="196dp"
         android:fontFamily="@font/mineclicktexte"
         android:text="@string/level"
         android:textColor="#fff"
@@ -91,16 +91,17 @@
     <TextView
         android:id="@+id/cpt"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/mineclicktexte"
         android:text="@string/cpt"
         android:textColor="#fff"
         android:textSize="30sp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monstre"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/inventaire"
@@ -157,6 +158,21 @@
         app:srcCompat="@mipmap/effects_autoclique"
         tools:visibility="invisible"
         android:contentDescription="@string/image" />
+
+    <TextView
+        android:id="@+id/tempspotion3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/autoclic"
+        app:layout_constraintEnd_toEndOf="@+id/autoclic"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/autoclic"
+        app:layout_constraintTop_toTopOf="@+id/autoclic"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/force"

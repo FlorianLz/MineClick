@@ -12,17 +12,20 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class JouerActivity extends AppCompatActivity implements TimerAction {
+public class JouerActivity extends AppCompatActivity implements TimerAction, TimerAction3 {
 
     private int cpt = 0;
     private int money = 0;
     private int multiplicateur=1;
     private RefreshHandler handler;
+    private RefreshHandler3 handler3;
     private int niveauActuel = 1;
     private int page = 2;
     private boolean utiliserpotion1=false;
     private boolean utiliserpotion2=false;
+    private boolean utiliserpotion3=false;
     private int tempspotion1 = 0;
+    private int tempspotion3 = 0;
     private int tempsaffichage = 0;
 
 
@@ -31,6 +34,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jouer);
         handler = new RefreshHandler(this);
+        handler3 = new RefreshHandler3(this);
 
         Context context = JouerActivity.this;
         SharedPreferences sharedPref = JouerActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
@@ -40,10 +44,14 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         niveauActuel = sharedPref.getInt(getString(R.string.saved_level), defaultValue);
         utiliserpotion1 = sharedPref.getBoolean(getString(R.string.utiliserpotion1), false);
         utiliserpotion2 = sharedPref.getBoolean(getString(R.string.utiliserpotion2), false);
+        utiliserpotion3 = sharedPref.getBoolean(getString(R.string.utiliserpotion3), false);
         tempspotion1 = sharedPref.getInt(getString(R.string.saved_tempspotion1), defaultValue);
+        tempspotion3 = sharedPref.getInt(getString(R.string.saved_tempspotion3), defaultValue);
         ((TextView) findViewById(R.id.nbargent)).setText("" +money);
         ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
-        ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+        //((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+        int reste = (5000 * niveauActuel) - cpt;
+        ((TextView) findViewById(R.id.cpt)).setText("Vie : " + reste);
         update();
         save();
 
@@ -74,11 +82,23 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             save();
             update();
             money();
-            ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
-            ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+            //((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
+            //((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
             tempsaffichage=5;
             afficherDegats();
+        }
 
+        if(utiliserpotion3){
+            if(tempspotion3 <= 0){
+                tempspotion3 = 1500;
+                findViewById(R.id.autoclic).setVisibility(View.VISIBLE);
+                findViewById(R.id.tempspotion3).setVisibility(View.VISIBLE);
+                updateTimer3();
+                save();
+            }else{
+                updateTimer3();
+                save();
+            }
         }
 
     }
@@ -116,7 +136,9 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         update();
         money();
         ((TextView) findViewById(R.id.level)).setText("lv :" + niveauActuel);
-        ((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+        //((TextView) findViewById(R.id.cpt)).setText("cpt :" + cpt);
+        int reste = (5000 * niveauActuel) - cpt;
+        ((TextView) findViewById(R.id.cpt)).setText("Vie : " + reste);
         save();
     }
 
@@ -131,8 +153,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
                 niveauActuel = niveau;
 
             }
-            //int reste = (50 * niveau) - clics;
-            //((TextView) findViewById(R.id.clickReste)).setText("Reste :" + reste);
+
             if(niveau == 1){
                 ((ImageView) findViewById(R.id.monstre)).setImageResource(R.mipmap.slime);
             }
@@ -174,8 +195,10 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
         editor.putInt(getString(R.string.saved_level), niveauActuel);
         editor.putInt(getString(R.string.saved_page), page);
         editor.putInt(getString(R.string.saved_tempspotion1), tempspotion1);
+        editor.putInt(getString(R.string.saved_tempspotion3), tempspotion3);
         editor.putBoolean(getString(R.string.utiliserpotion1), utiliserpotion1);
         editor.putBoolean(getString(R.string.utiliserpotion2), utiliserpotion2);
+        editor.putBoolean(getString(R.string.utiliserpotion3), utiliserpotion3);
         editor.commit();
     }
 
@@ -193,6 +216,26 @@ public class JouerActivity extends AppCompatActivity implements TimerAction {
             findViewById(R.id.force).setVisibility(View.INVISIBLE);
             findViewById(R.id.tempspotion1).setVisibility(View.INVISIBLE);
             utiliserpotion1=false;
+            save();
+        }
+    }
+
+    public void updateTimer3() {
+        findViewById(R.id.autoclic).setVisibility(View.VISIBLE);
+        findViewById(R.id.tempspotion3).setVisibility(View.VISIBLE);
+        tempspotion3--;
+        cpt++;
+        update();
+        int reste = (5000 * niveauActuel) - cpt;
+        ((TextView) findViewById(R.id.cpt)).setText("Vie : " + reste);
+        ((TextView) findViewById(R.id.tempspotion3)).setText("" + tempspotion3/50);
+        save();
+        if (tempspotion3 > 0){
+            handler3.scheduleRefresh(20);
+        }else{
+            findViewById(R.id.autoclic).setVisibility(View.INVISIBLE);
+            findViewById(R.id.tempspotion3).setVisibility(View.INVISIBLE);
+            utiliserpotion3=false;
             save();
         }
     }

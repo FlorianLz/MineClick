@@ -30,7 +30,7 @@
     <string name="saved_page">page</string>
     <string name="saved_potion1">potion1</string>
     <string name="saved_potion2">potion2</string>
-    <string name="saved_potion3">potion3</string>
+    <string name="saved_potion3">saved_potion3</string>
     <string name="saved_tempspotion1">saved_tempspotion1</string>
     <string name="utiliserpotion1">utiliserpotion1</string>
     <string name="utiliserpotion2">utiliserpotion2</string>
@@ -57,4 +57,6 @@
     <string name="pig">pig</string>
     <string name="bedrock">bedrock</string>
     <string name="commandblock">commandblock</string>
+    <string name="utiliserpotion3">potion3</string>
+    <string name="saved_tempspotion3">saved_tempspotion3</string>
 </resources>

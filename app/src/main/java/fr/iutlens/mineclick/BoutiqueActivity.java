@@ -56,6 +56,8 @@ public class BoutiqueActivity extends AppCompatActivity {
             findViewById(R.id.acheterpotion1).setVisibility(View.VISIBLE);
         }else{
             findViewById(R.id.acheterpotion1).setVisibility(View.INVISIBLE);
+            findViewById(R.id.acheterpotion2).setVisibility(View.INVISIBLE);
+            findViewById(R.id.acheterpotion3).setVisibility(View.INVISIBLE);
         }
     }
 
@@ -68,6 +70,8 @@ public class BoutiqueActivity extends AppCompatActivity {
             findViewById(R.id.acheterpotion2).setVisibility(View.VISIBLE);
         }else{
             findViewById(R.id.acheterpotion2).setVisibility(View.INVISIBLE);
+            findViewById(R.id.acheterpotion1).setVisibility(View.INVISIBLE);
+            findViewById(R.id.acheterpotion3).setVisibility(View.INVISIBLE);
         }
     }
 
@@ -80,6 +84,8 @@ public class BoutiqueActivity extends AppCompatActivity {
             findViewById(R.id.acheterpotion3).setVisibility(View.VISIBLE);
         }else{
             findViewById(R.id.acheterpotion3).setVisibility(View.INVISIBLE);
+            findViewById(R.id.acheterpotion2).setVisibility(View.INVISIBLE);
+            findViewById(R.id.acheterpotion1).setVisibility(View.INVISIBLE);
         }
     }
 

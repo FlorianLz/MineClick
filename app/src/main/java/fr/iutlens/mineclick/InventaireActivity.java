@@ -119,6 +119,17 @@ public class InventaireActivity extends AppCompatActivity {
 
     }
 
+    public void utiliserPotion3(View view) {
+        if (nbpotion3 > 0){
+            nbpotion3--;
+            save3();
+            Intent intent = new Intent(this, JouerActivity.class);
+            startActivity(intent);
+            this.finish();
+        }
+
+    }
+
     public void save(){
         SharedPreferences sharedPref = InventaireActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -132,6 +143,13 @@ public class InventaireActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putInt(getString(R.string.saved_potion2), nbpotion2);
         editor.putBoolean(getString(R.string.utiliserpotion2), true);
+        editor.commit();
+    }
+    public void save3(){
+        SharedPreferences sharedPref = InventaireActivity.this.getSharedPreferences("SaveData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(getString(R.string.saved_potion3), nbpotion3);
+        editor.putBoolean(getString(R.string.utiliserpotion3), true);
         editor.commit();
     }
 
