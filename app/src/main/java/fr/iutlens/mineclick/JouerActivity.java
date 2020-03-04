@@ -41,7 +41,7 @@ public class JouerActivity extends AppCompatActivity implements TimerAction, Tim
         int defaultValue = getResources().getInteger(R.integer.default_money);
         cpt = sharedPref.getInt(getString(R.string.saved_clics), defaultValue);
         money = sharedPref.getInt(getString(R.string.saved_money), defaultValue);
-        niveauActuel = sharedPref.getInt(getString(R.string.saved_level), defaultValue);
+        niveauActuel = sharedPref.getInt(getString(R.string.saved_level), 1);
         utiliserpotion1 = sharedPref.getBoolean(getString(R.string.utiliserpotion1), false);
         utiliserpotion2 = sharedPref.getBoolean(getString(R.string.utiliserpotion2), false);
         utiliserpotion3 = sharedPref.getBoolean(getString(R.string.utiliserpotion3), false);

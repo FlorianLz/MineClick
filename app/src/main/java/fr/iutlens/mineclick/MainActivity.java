@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         money = sharedPref.getInt(getString(R.string.saved_money), defaultValue);
         save();
 
-        if(cpt == 1){
+        if(cpt == 0){
             ((TextView) findViewById(R.id.suivant)).setText("Nouvelle partie");
         }else{
             ((TextView) findViewById(R.id.suivant)).setText("Reprendre la partie");
